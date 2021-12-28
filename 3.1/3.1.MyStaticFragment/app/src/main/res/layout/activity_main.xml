@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/button_fragment"
+        android:name="com.example.mystaticfragment.button_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/button_fragment"
+        tools:ignore="Instantiatable" />
+    <fragment
+        android:id="@+id/checkbox_fragment"
+        android:name="com.example.mystaticfragment.checkbox_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/checkbox_fragment"
+        tools:ignore="Instantiatable" />
+    <fragment
+        android:id="@+id/image_fragment"
+        android:name="com.example.mystaticfragment.image_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:layout="@layout/image_fragment"
+        tools:ignore="Instantiatable" />
+</LinearLayout>
