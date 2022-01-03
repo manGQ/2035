@@ -1,8 +1,0 @@
-com/example/myapplication/BuildConfig.java
- com.example.myapplication.BuildConfig
-com/example/myapplication/CatalogActivity.java
- com.example.myapplication.CatalogActivity
- com.example.myapplication.CatalogActivity$1
-com/example/myapplication/EditorActivity.java
- com.example.myapplication.EditorActivity
- com.example.myapplication.EditorActivity$1
