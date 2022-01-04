@@ -11,7 +11,8 @@
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name=".EditorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/editor_activity_title_new_pet"/>
         <activity
             android:name=".CatalogActivity"
             android:exported="true">

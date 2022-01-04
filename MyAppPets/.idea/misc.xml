@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-xxxhdpi/ic_launcher_background.xml" value="0.11296296296296296" />
         <entry key="app/src/main/res/layout/activity_catalog.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/activity_editor.xml" value="0.1381340579710145" />
+        <entry key="app/src/main/res/menu/menu_catalog.xml" value="0.21296296296296297" />
         <entry key="app/src/main/res/menu/menu_editor.xml" value="0.15833333333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18385416666666668" />
