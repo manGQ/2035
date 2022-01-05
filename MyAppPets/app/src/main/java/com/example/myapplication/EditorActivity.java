@@ -30,25 +30,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 
 /**
- * Allows user to create a new pet or edit an existing one.
+ * Позволяет пользователю создать нового питомца или отредактировать существующего.
  */
 public class EditorActivity extends AppCompatActivity {
 
-    /** EditText field to enter the pet's name */
+    /** Поле EditText для ввода имени питомца  */
     private EditText mNameEditText;
 
-    /** EditText field to enter the pet's breed */
+    /** Поле EditText для ввода породы питомца  */
     private EditText mBreedEditText;
 
-    /** EditText field to enter the pet's weight */
+    /** Поле EditText для ввода веса питомца */
     private EditText mWeightEditText;
 
-    /** EditText field to enter the pet's gender */
+    /** Поле EditText для ввода пола питомца */
     private Spinner mGenderSpinner;
 
     /**
-     * Gender of the pet. The possible values are:
-     * 0 for unknown gender, 1 for male, 2 for female.
+     * Пол питомца. Возможные значения:
+     * 0 - пол неизвестен, 1 - мужской, 2 - женский.
      */
     private int mGender = 0;
 
@@ -57,7 +57,8 @@ public class EditorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
 
-        // Find all relevant views that we will need to read user input from
+        // Находим все соответствующие представления,
+        // которые нам понадобятся для чтения пользовательского ввода
         mNameEditText = (EditText) findViewById(R.id.edit_pet_name);
         mBreedEditText = (EditText) findViewById(R.id.edit_pet_breed);
         mWeightEditText = (EditText) findViewById(R.id.edit_pet_weight);
@@ -67,21 +68,21 @@ public class EditorActivity extends AppCompatActivity {
     }
 
     /**
-     * Setup the dropdown spinner that allows the user to select the gender of the pet.
+     * Настройте выпадающий счетчик, который позволяет пользователю выбрать пол питомца.
      */
     private void setupSpinner() {
-        // Create adapter for spinner. The list options are from the String array it will use
-        // the spinner will use the default layout
+        // Создаем адаптер для счетчика. Параметры списка взяты из массива String, который он будет использовать
+        // счетчик будет использовать макет по умолчанию
         ArrayAdapter genderSpinnerAdapter = ArrayAdapter.createFromResource(this,
                 R.array.array_gender_options, android.R.layout.simple_spinner_item);
 
-        // Specify dropdown layout style - simple list view with 1 item per line
+        // Укажите стиль макета раскрывающегося списка - простой вид списка с 1 элементом в строке
         genderSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
-        // Apply the adapter to the spinner
+        // Применяем адаптер к спиннеру
         mGenderSpinner.setAdapter(genderSpinnerAdapter);
 
-        // Set the integer mSelected to the constant values
+        // Устанавливаем целое число mSelected на постоянные значения
         mGenderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -97,7 +98,8 @@ public class EditorActivity extends AppCompatActivity {
                 }
             }
 
-            // Because AdapterView is an abstract class, onNothingSelected must be defined
+            // Поскольку AdapterView является абстрактным классом,
+            // необходимо определить onNothingSelected
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 mGender = 0; // Unknown
@@ -107,27 +109,27 @@ public class EditorActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu options from the res/menu/menu_editor.xml file.
-        // This adds menu items to the app bar.
+        // Расширение параметров меню из файла res / menu / menu_editor.xml.
+        // Это добавляет пункты меню на панель приложения.
         getMenuInflater().inflate(R.menu.menu_editor, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // User clicked on a menu option in the app bar overflow menu
+        // Пользователь щелкнул пункт меню в меню переполнения панели приложения
         switch (item.getItemId()) {
-            // Respond to a click on the "Save" menu option
+            // Отвечаем на щелчок по опции меню "Сохранить"
             case R.id.action_save:
-                // Do nothing for now
+                // Пока ничего не делаем
                 return true;
-            // Respond to a click on the "Delete" menu option
+            //Отвечаем на щелчок по опции меню "Удалить"
             case R.id.action_delete:
-                // Do nothing for now
+                // Пока ничего не делаем
                 return true;
-            // Respond to a click on the "Up" arrow button in the app bar
+            // Отвечаем на нажатие кнопки со стрелкой «Вверх» на панели приложения
             case android.R.id.home:
-                // Navigate back to parent activity (CatalogActivity)
+                // Возвращаемся к родительскому действию (CatalogActivity)
                 NavUtils.navigateUpFromSameTask(this);
                 return true;
         }

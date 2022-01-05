@@ -23,46 +23,47 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-/**
- * Displays list of pets that were entered and stored in the app.
- */
+
+/*
+** Отображает список домашних животных, которые были введены и сохранены в приложении.
+*/
 public class CatalogActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_catalog);
+        setContentView(R.layout.activity_catalog);  //создается разметка на экране
 
-        // Setup FAB to open EditorActivity
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        // Настраиваем FAB для открытия EditorActivity
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); //находим кнопку на экране
+        fab.setOnClickListener(new View.OnClickListener() { //устанавливаем на кнопку прослушиватель кликов
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CatalogActivity.this, EditorActivity.class);
-                startActivity(intent);
+            public void onClick(View view) { // при нажатии на кнопку
+                Intent intent = new Intent(CatalogActivity.this, EditorActivity.class);// создается интент чтобы открыть Активити редактора
+                startActivity(intent); //запускаем интент
             }
         });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu options from the res/menu/menu_catalog.xml file.
-        // This adds menu items to the app bar.
+        // Расширение пунктов меню из файла res / menu / menu_catalog.xml.
+        // Это добавляет пункты меню на панель приложения.
         getMenuInflater().inflate(R.menu.menu_catalog, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // User clicked on a menu option in the app bar overflow menu
+        // Пользователь щелкнул пункт меню в меню переполнения панели приложения
         switch (item.getItemId()) {
-            // Respond to a click on the "Insert dummy data" menu option
+            // Отвечаем на щелчок по пункту меню "Вставить фиктивные данные"
             case R.id.action_insert_dummy_data:
-                // Do nothing for now
+                // Пока ничего не делаем
                 return true;
-            // Respond to a click on the "Delete all entries" menu option
+            // Отвечаем на щелчок по пункту меню "Удалить все записи"
             case R.id.action_delete_all_entries:
-                // Do nothing for now
+                // Пока ничего не делаем
                 return true;
         }
         return super.onOptionsItemSelected(item);
